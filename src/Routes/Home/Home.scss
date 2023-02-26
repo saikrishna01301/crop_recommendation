@@ -1,0 +1,54 @@
+.header {
+  height: 75vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 133, 0.8)
+    ),
+    url(../../assets/main.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+
+.header__text-box {
+  width: 80%;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  margin-bottom: 3.2rem;
+}
+.heading-primary--main {
+  display: block;
+  font-size: 6.5rem;
+  font-weight: 400;
+  letter-spacing: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.8rem 4.6rem;
+  display: inline-block;
+  border-radius: 10rem;
+  color: #777;
+  position: relative;
+  font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
+}

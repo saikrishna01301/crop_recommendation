@@ -1,0 +1,49 @@
+.footer-container {
+  background: #333;
+}
+.footer {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10rem 0;
+  font-size: 1.4rem;
+  color: #f7f7f7;
+  display: flex;
+
+  &--logo-box {
+    width: 30%;
+    text-align: center;
+    // margin-bottom: 8rem;
+    border-right: 1px solid #777;
+    padding-bottom: 2.4rem;
+    padding-right: 2.4rem;
+    // padding:3rem 0 5.4rem 0;
+  }
+  &--heading {
+    color: #55c57a;
+    // font-weight: 400;
+    display: block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-top: -2.4rem;
+  }
+
+  &--logo {
+    margin: 0 auto;
+    width: 14rem;
+    height: 14rem;
+  }
+  &--left-para {
+    margin-top: 2.5rem;
+  }
+
+  &--icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2.4rem;
+  }
+
+  &--icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}

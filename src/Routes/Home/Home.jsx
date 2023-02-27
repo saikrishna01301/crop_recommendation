@@ -1,7 +1,8 @@
 import "./Home.scss";
 import Services from "../../components/services/Services";
 import Main from "../../components/Main/Main";
-import Testimonials  from "../../components/Testimonials/Testimonials";
+import Testimonials from "../../components/Testimonials/Testimonials";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <Main />
       <Services />
       <Testimonials />
+      <Footer />
     </>
   );
 };

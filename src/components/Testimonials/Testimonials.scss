@@ -5,6 +5,7 @@
 }
 .testimonials-container {
   width: 50%;
+  margin-right: 4rem;
 }
 .heading-secondary {
   text-transform: uppercase;
@@ -34,4 +35,16 @@
   font-size: 1.6rem;
   color: #777;
   font-style: italic;
+}
+
+.gallery {
+  width: 50%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 0.8rem;
+  column-gap: 0.6rem;
+}
+.gallery-img {
+  width: 19rem;
+  height: 16rem;
 }

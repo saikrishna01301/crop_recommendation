@@ -21,7 +21,7 @@ const Navigation = () => {
             </NavLink>
           </li>
           <li className="nav__right--item">
-            <NavLink className="nav__link" to="/croprecommendation">
+            <NavLink className="nav__link" to="/crop-recommendation">
               Crop Recommendation
             </NavLink>
           </li>

@@ -6,7 +6,9 @@
 .heading--2 {
   text-transform: uppercase;
   font-size: 3.5rem;
-  color: #33b882;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
   text-align: center;
 }
 .para {

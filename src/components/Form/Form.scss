@@ -1,0 +1,39 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 8rem auto;
+  background-color: #f2f2f2;
+  padding: 4rem;
+}
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 2rem;
+}
+label {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+input[type="number"],
+:focus {
+  margin-bottom: 2rem;
+  font-size: 1.6rem;
+  padding: 1rem 1.6rem;
+  outline: none;
+}
+input[type="submit"] {
+  font-size: 2rem;
+  width: 30%;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #55c57a;
+  border: none;
+  padding: 1.5rem 2rem;
+  border-radius: 10rem;
+}

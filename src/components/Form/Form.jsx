@@ -69,7 +69,7 @@ const Form = () => {
           required
         />
 
-        <input type="submit" />
+        <input type="submit"  className="submit-form"/>
       </form>
       <Footer />
     </>

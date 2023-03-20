@@ -68,8 +68,8 @@ const Form = () => {
           onChange={onChangeHandler}
           required
         />
-
-        <input type="submit"  className="submit-form"/>
+        <button type="submit" className="submit-form">Submit</button>
+        
       </form>
       <Footer />
     </>

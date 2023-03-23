@@ -1,6 +1,6 @@
 import "./Form.scss";
 import Footer from "../../components/footer/Footer";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const defaultFormValues = {
@@ -10,8 +10,10 @@ const defaultFormValues = {
   humidity: "",
 };
 const Form = () => {
-  const history = useNavigate();
+  // const history = useNavigate();
   const [formValues, setFormValues] = useState(defaultFormValues);
+
+  const { nitrogen, phosphorus, potassium, humidity } = formValues;
 
   const onChangeHandler = (e) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ const Form = () => {
         <input
           type="number"
           name="nitrogen"
-          value={formValues.nitrogen}
+          value={nitrogen}
           onChange={onChangeHandler}
           required
         />
@@ -46,7 +48,7 @@ const Form = () => {
         <input
           type="number"
           name="phosphorus"
-          value={formValues.phosphorus}
+          value={phosphorus}
           onChange={onChangeHandler}
           required
         />
@@ -55,7 +57,7 @@ const Form = () => {
         <input
           type="number"
           name="potassium"
-          value={formValues.potassium}
+          value={potassium}
           onChange={onChangeHandler}
           required
         />
@@ -64,7 +66,7 @@ const Form = () => {
         <input
           type="number"
           name="humidity"
-          value={formValues.humidity}
+          value={humidity}
           onChange={onChangeHandler}
           required
         />

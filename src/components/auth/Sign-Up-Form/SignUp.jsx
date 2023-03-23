@@ -46,7 +46,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <h3>Sign-Up using Email and Password</h3>
+      <h2>Sign-Up using Email and Password</h2>
       <form onSubmit={onSubmitHandler}>
         <FormInput
           label={"Full Name"}
@@ -84,7 +84,9 @@ const SignUp = () => {
           required
         />
 
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn-s">
+          Submit
+        </button>
       </form>
     </div>
   );

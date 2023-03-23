@@ -42,35 +42,38 @@ const SignIn = () => {
 
   return (
     <div className="auth-container">
-      <div className="sign-in">
-        <form onSubmit={onSubmitHandler}>
-          <FormInput
-            label={"Email"}
-            type="email"
-            name="email"
-            value={email}
-            onChange={onClickHandler}
-            required
-          />
-          <FormInput
-            label={"Password"}
-            type="password"
-            name="password"
-            value={password}
-            onChange={onClickHandler}
-            required
-          />
-          <div>
-            <button type="submit">sign in</button>
-            <button type="button" onClick={onGoogleHandler}>
-              google sign in
-            </button>
-          </div>
-          {/* <link href="../Sign-Up-Form/SignUp.jsx">
-            already have an account?
-          </link> */}
-        </form>
-      </div>
+      <h2 className="sign-in--head">Already have an account ?</h2>
+      <p className="sign-in--p">Sign-in to your account</p>
+
+      <form onSubmit={onSubmitHandler} className="sign-in--form">
+        <FormInput
+          label={"Email"}
+          type="email"
+          name="email"
+          value={email}
+          onChange={onClickHandler}
+          required
+        />
+        <FormInput
+          label={"Password"}
+          type="password"
+          name="password"
+          value={password}
+          onChange={onClickHandler}
+          required
+        />
+        <div className="buttons-container">
+          <button type="submit" className="btn-s">
+            sign in
+          </button>
+          <button type="button" className="btn-s" onClick={onGoogleHandler}>
+            google sign in
+          </button>
+        </div>
+        <p>Create new account ?</p>
+        
+      </form>
+
       <div className="sign-up"></div>
     </div>
   );

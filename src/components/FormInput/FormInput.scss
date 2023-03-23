@@ -1,0 +1,21 @@
+.form {
+  &--container {
+    margin-top: 3rem;
+    width: 100%;
+  }
+  &--label {
+    font-size: 1.8rem;
+  }
+  &--input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #555;
+    font-size: 1.6rem;
+    margin-top: 3rem;
+    padding: 0;
+    &:focus {
+      outline: none;
+    }
+  }
+}

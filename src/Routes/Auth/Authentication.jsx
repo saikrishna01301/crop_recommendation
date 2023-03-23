@@ -6,7 +6,7 @@ const Authentication = () => {
   return (
     <div>
       <SignIn />
-      <SignUp />
+      {/* <SignUp /> */}
     </div>
   );
 };

@@ -1,8 +1,9 @@
+import "./FormInput.scss";
 const FormInput = ({ label, ...otherprops }) => {
   return (
-    <div>
-      <label>{label}</label>
-      <input {...otherprops} />
+    <div className="form--container">
+      <label className="form--label">{label}</label>
+      <input className="form--input" {...otherprops} />
     </div>
   );
 };

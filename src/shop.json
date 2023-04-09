@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "name 1",
+    "image": "./assets/selection.png",
+    "prise": 25
+  },
+  {
+    "id": 2,
+    "name": "name 2",
+    "image": "./assets/selection.png",
+    "prise": 30
+  },
+  {
+    "id": 3,
+    "name": "name 3",
+    "image": "./assets/selection.png",
+    "prise": 30
+  },
+  {
+    "id": 4,
+    "name": "name 4",
+    "image": "./assets/selection.png",
+    "prise": 35
+  },
+  {
+    "id": 5,
+    "name": "name 5",
+    "image": "./assets/selection.png",
+    "prise": 40
+  },
+  {
+    "id": 6,
+    "name": "name 6",
+    "image": "./assets/selection.png",
+    "prise": 45
+  }
+]

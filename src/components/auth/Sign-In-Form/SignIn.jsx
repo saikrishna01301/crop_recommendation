@@ -7,6 +7,9 @@ import {
 import { useState } from "react";
 import FormInput from "../../FormInput/FormInput";
 
+// import { useContext } from "react";
+// import { userContext } from "../../../context/user.context";
+
 /////////////////////////////////////////////////////
 const defaultSignInFormFields = {
   email: "",
@@ -14,10 +17,13 @@ const defaultSignInFormFields = {
 };
 ///////////////////component///////////////////////////////
 const SignIn = () => {
+  // const { setCurrentUser } = useContext(userContext);
+
   //----------google sign in--------------------------
   const onGoogleHandler = async () => {
-    const { user } = await signInWithGooglePopup();
-    createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
+
+    // setCurrentUser(user);
   };
   //----------functionality---------------------------
   const [formFields, setFormFields] = useState(defaultSignInFormFields);
@@ -32,8 +38,8 @@ const SignIn = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await authSignInWithEmailAndPassword(email, password);
-      console.log(res);
+      const { user } = await authSignInWithEmailAndPassword(email, password);
+      // setCurrentUser(user);
     } catch (error) {
       console.log(error);
     }
@@ -71,7 +77,6 @@ const SignIn = () => {
           </button>
         </div>
         <p>Create new account ?</p>
-        
       </form>
 
       <div className="sign-up"></div>

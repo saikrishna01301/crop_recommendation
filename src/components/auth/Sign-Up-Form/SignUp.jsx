@@ -45,9 +45,9 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <h2>Sign-Up using Email and Password</h2>
-      <form onSubmit={onSubmitHandler}>
+    <div className="auth-container">
+      <h2 className="sign-up--head">Sign-Up using Email and Password</h2>
+      <form onSubmit={onSubmitHandler} className="sign-up--form">
         <FormInput
           label={"Full Name"}
           type="text"
@@ -84,9 +84,12 @@ const SignUp = () => {
           required
         />
 
-        <button type="submit" className="btn-s">
-          Submit
+        <button type="submit" className="btn-sign-up">
+          Sign up
         </button>
+        {/* <Link to="../Sign-In-Form/SignIn.jsx" className="title">
+          sign in
+        </Link> */}
       </form>
     </div>
   );

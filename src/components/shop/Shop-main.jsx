@@ -4,9 +4,11 @@ import { productsContext } from "../../context/products.context";
 import ProductCard from "../Product-Card/Product-Card";
 import Cart from "../cart/Cart";
 import CartDropdown from "../cart-dropdown/CartDropdown";
+import { CartContext } from "../../context/cart.context";
 
 const Shop = () => {
   const { products } = useContext(productsContext);
+  const { isCartOpen } = useContext(CartContext);
 
   return (
     <>
@@ -14,7 +16,7 @@ const Shop = () => {
         <span>All Available Products</span>
         <Cart />
       </div>
-      <CartDropdown />
+      {isCartOpen && <CartDropdown />}
       <div className="products-container">
         {products.map((product) => {
           return <ProductCard key={product.id} product={product} />;

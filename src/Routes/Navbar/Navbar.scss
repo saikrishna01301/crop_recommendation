@@ -24,8 +24,11 @@
       font-size: 1.6rem; //1rem = 10px
       font-weight: 400;
       text-transform: uppercase;
-      margin-right: 4rem;
+
       cursor: pointer;
+    }
+    &--item:not(:last-child) {
+      margin-right: 4rem;
     }
   }
   &__link {

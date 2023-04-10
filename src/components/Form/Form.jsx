@@ -8,12 +8,23 @@ const defaultFormValues = {
   phosphorus: "",
   potassium: "",
   humidity: "",
+  temperature: "",
+  ph: "",
+  rainfall: "",
 };
 const Form = () => {
   // const history = useNavigate();
   const [formValues, setFormValues] = useState(defaultFormValues);
 
-  const { nitrogen, phosphorus, potassium, humidity } = formValues;
+  const {
+    nitrogen,
+    phosphorus,
+    potassium,
+    humidity,
+    temperature,
+    ph,
+    rainfall,
+  } = formValues;
 
   const onChangeHandler = (e) => {
     e.preventDefault();
@@ -43,7 +54,6 @@ const Form = () => {
           onChange={onChangeHandler}
           required
         />
-
         <label htmlFor="phosphorus"> Phosphorus:</label>
         <input
           type="number"
@@ -52,7 +62,6 @@ const Form = () => {
           onChange={onChangeHandler}
           required
         />
-
         <label htmlFor="potassium">Potassium:</label>
         <input
           type="number"
@@ -61,7 +70,6 @@ const Form = () => {
           onChange={onChangeHandler}
           required
         />
-
         <label htmlFor="humidity">Humidity:</label>
         <input
           type="number"
@@ -70,6 +78,31 @@ const Form = () => {
           onChange={onChangeHandler}
           required
         />
+        <label htmlFor="temperature">Temperature:</label>
+        <input
+          type="number"
+          name="temperature"
+          value={temperature}
+          onChange={onChangeHandler}
+          required
+        />
+        <label htmlFor="ph">PH:</label>
+        <input
+          type="number"
+          name="ph"
+          value={ph}
+          onChange={onChangeHandler}
+          required
+        />
+        <label htmlFor="rainfall">Rainfall:</label>
+        <input
+          type="number"
+          name="rainfall"
+          value={rainfall}
+          onChange={onChangeHandler}
+          required
+        />
+
         <button type="submit" className="submit-form">
           Submit
         </button>

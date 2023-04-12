@@ -9,7 +9,7 @@ const Authentication = () => {
       {/* <Link to="/auth/sign-in">sign in</Link>
       <Outlet/> */}
       <SignIn />
-      <SignUp />
+      {/* <SignUp /> */}
     </div>
   );
 };

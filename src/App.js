@@ -7,18 +7,22 @@ import { Routes, Route } from "react-router-dom";
 import SignIn from "./components/auth/Sign-In-Form/SignIn";
 import SignUp from "./components/auth/Sign-Up-Form/SignUp";
 import Shop from "./components/shop/Shop-main";
+import Checkout from "./components/checkout/Checkout";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path="/crop-recommendation" element={<Crop />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="auth" element={<Authentication />}>
+        <Route path="crop-recommendation" element={<Crop />} />
+        <Route path="shop" element={<Shop />} />
+        {/* <Route path="auth" element={<Authentication />}>
           <Route path="sign-in" element={<SignIn />} />
           <Route path="sign-up" element={<SignUp />} />
-        </Route>
+        </Route> */}
+        <Route path="sign-in" element={<SignIn />} />
+        <Route path="sign-up" element={<SignUp />} />
+        <Route path="checkout" element={<Checkout />} />
       </Route>
     </Routes>
   );

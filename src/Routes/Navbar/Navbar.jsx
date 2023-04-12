@@ -9,8 +9,8 @@ const Navigation = () => {
   // console.log(currentUser);
 
   const onSignOutHandler = async () => {
-    await userSignOut()
-  }
+    await userSignOut();
+  };
   return (
     <>
       <div className="nav__container">
@@ -50,8 +50,8 @@ const Navigation = () => {
                 Sign Out
               </span>
             ) : (
-              <NavLink className="nav__link" to="auth">
-                Sign Up
+              <NavLink className="nav__link" to="sign-in ">
+                Sign In
               </NavLink>
             )}
           </li>

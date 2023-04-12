@@ -3,8 +3,13 @@ import Services from "../../components/services/Services";
 import Main from "../../components/Main/Main";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import Footer from "../../components/footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+  const getStartedHandler = () => {
+    navigate("/crop-recommendation");
+  };
   return (
     <>
       <div className="header">
@@ -16,7 +21,9 @@ const Home = () => {
               based on your specific conditions.
             </span>
           </h1>
-          <button className="btn">Get Started</button>
+          <button className="btn" onClick={getStartedHandler}>
+            Get Started
+          </button>
         </div>
       </div>
       <Main />

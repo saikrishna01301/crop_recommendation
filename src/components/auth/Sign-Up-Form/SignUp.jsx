@@ -5,6 +5,7 @@ import {
   createUserDocumentFromAuth,
 } from "../../../utils/firebase";
 import FormInput from "../../FormInput/FormInput";
+import { useNavigate } from "react-router-dom";
 
 const defaultSignUpFormFields = {
   displayName: "",
@@ -16,6 +17,7 @@ const defaultSignUpFormFields = {
 const SignUp = () => {
   const [formFields, setFormFields] = useState(defaultSignUpFormFields);
   const { displayName, email, password, conformPassword } = formFields;
+  const navigate = useNavigate();
   //-----------------onChange----------------//
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
@@ -42,6 +44,10 @@ const SignUp = () => {
       }
     }
     setFormFields(defaultSignUpFormFields);
+  };
+  ////////////////////////////////////////
+  const onAlreadyHaveAnAccountHandler = () => {
+    navigate("/sign-in");
   };
 
   return (
@@ -87,9 +93,7 @@ const SignUp = () => {
         <button type="submit" className="btn-sign-up">
           Sign up
         </button>
-        {/* <Link to="../Sign-In-Form/SignIn.jsx" className="title">
-          sign in
-        </Link> */}
+        <p onClick={onAlreadyHaveAnAccountHandler}>Already have an account ?</p>
       </form>
     </div>
   );

@@ -6,6 +6,7 @@ import {
 } from "../../../utils/firebase";
 import { useState } from "react";
 import FormInput from "../../FormInput/FormInput";
+import { useNavigate } from "react-router-dom";
 
 // import { useContext } from "react";
 // import { userContext } from "../../../context/user.context";
@@ -19,6 +20,10 @@ const defaultSignInFormFields = {
 const SignIn = () => {
   // const { setCurrentUser } = useContext(userContext);
 
+  const navigate = useNavigate();
+  const createAccountHandler = () => {
+    navigate("/sign-up");
+  };
   //----------google sign in--------------------------
   const onGoogleHandler = async () => {
     await signInWithGooglePopup();
@@ -76,10 +81,10 @@ const SignIn = () => {
             google sign in
           </button>
         </div>
-        <p>Create new account ?</p>
+        <p onClick={createAccountHandler}>Create new account ?</p>
       </form>
 
-      <div className="sign-up"></div>
+      <div className="sign-im"></div>
     </div>
   );
 };

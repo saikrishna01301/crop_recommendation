@@ -89,11 +89,12 @@ const SignUp = () => {
           onChange={onChangeHandler}
           required
         />
-
+        <p className="new-acc" onClick={onAlreadyHaveAnAccountHandler}>
+          Already have an account ?
+        </p>
         <button type="submit" className="btn-sign-up">
           Sign up
         </button>
-        <p onClick={onAlreadyHaveAnAccountHandler}>Already have an account ?</p>
       </form>
     </div>
   );

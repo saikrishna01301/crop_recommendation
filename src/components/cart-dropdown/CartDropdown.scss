@@ -10,20 +10,21 @@
   top: 14rem;
   right: 7rem;
   z-index: 5;
+}
+.empty-message {
+  font-size: 1.8rem;
+  margin: 18rem auto;
+}
 
-  .empty-message {
-    font-size: 1.8rem;
-    margin: 5rem auto;
-  }
+.cart-items {
+  height: 28rem;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
 
-  .cart-items {
-    height: 24rem;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-  }
 
-  button {
-    margin-top: auto;
-  }
+.cart-item-img {
+  width: 8rem;
+  height: 10rem;
 }

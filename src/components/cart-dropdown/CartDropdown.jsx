@@ -3,6 +3,7 @@ import CartItem from "../cart-items/Cart-Item";
 import { useContext } from "react";
 import { CartContext } from "../../context/cart.context";
 import { useNavigate } from "react-router-dom";
+import ShopButton from "../shop-button/Shop-Button";
 
 const CartDropdown = () => {
   const { cartItems } = useContext(CartContext);
@@ -18,9 +19,11 @@ const CartDropdown = () => {
         })}
       </div>
 
-      <button className="btn" onClick={checkoutHandler}>
-        Checkout
-      </button>
+      <ShopButton
+        className="button-shop"
+        clickEvent={checkoutHandler}
+        text="Checkout"
+      />
     </div>
   );
 };

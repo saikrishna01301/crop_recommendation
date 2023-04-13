@@ -1,17 +1,22 @@
 .nav {
-  &__logo {
-    width: 6.5rem;
-    height: 7rem;
-    position: absolute;
-    top: -0.5rem;
-  }
   &__container {
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: 0 auto;
-    height: 6rem;
+    height: 8rem;
   }
+  &__left {
+    width: 30%;
+  }
+  &__logo {
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    top: -0.5rem;
+    // margin-bottom: 0;
+  }
+
   &__right {
     width: 100%;
     color: #111;
@@ -24,7 +29,6 @@
       font-size: 1.6rem; //1rem = 10px
       font-weight: 400;
       text-transform: uppercase;
-
       cursor: pointer;
     }
     &--item:not(:last-child) {

@@ -73,6 +73,9 @@ const SignIn = () => {
           onChange={onClickHandler}
           required
         />
+        <p className="new-acc" onClick={createAccountHandler}>
+          Create new account ?
+        </p>
         <div className="buttons-container">
           <button type="submit" className="btn-s">
             sign in
@@ -81,10 +84,7 @@ const SignIn = () => {
             google sign in
           </button>
         </div>
-        <p onClick={createAccountHandler}>Create new account ?</p>
       </form>
-
-      <div className="sign-im"></div>
     </div>
   );
 };

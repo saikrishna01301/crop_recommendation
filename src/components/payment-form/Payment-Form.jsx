@@ -15,7 +15,7 @@ const PaymentForm = () => {
 
   const paymentHandler = async (e) => {
     e.preventDefault();
-    console.log("ok");
+
     if (!stripe || !elements) {
       return;
     }

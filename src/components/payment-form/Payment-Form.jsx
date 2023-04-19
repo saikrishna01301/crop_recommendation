@@ -13,6 +13,7 @@ const PaymentForm = () => {
   const amount = totalCartCost;
   // const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
+  
   const paymentHandler = async (e) => {
     e.preventDefault();
     console.log("ok");

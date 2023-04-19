@@ -1,10 +1,10 @@
 import "./Crop.scss";
 import Form from "../../components/Form/Form";
 
-const Crop = () => {
+const Crop = ({ handlePrediction }) => {
   return (
     <div className="crop-container">
-      <Form />
+      <Form handlePrediction={handlePrediction} />
     </div>
   );
 };

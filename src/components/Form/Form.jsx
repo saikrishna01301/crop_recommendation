@@ -12,7 +12,7 @@ const defaultFormValues = {
   ph: "",
   rainfall: "",
 };
-const Form = () => {
+const Form = ({ha}) => {
   // const history = useNavigate();
   const [formValues, setFormValues] = useState(defaultFormValues);
 
@@ -32,14 +32,33 @@ const Form = () => {
     setFormValues({ ...formValues, [name]: value });
   };
 
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   // Do some form processing here...
+  //   // Then change the route
+  //   // history("/help");
+  //   console.log(formValues);
+  //   setFormValues(defaultFormValues);
+  // };
+
+  ////////////////////////////////////////////////
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Do some form processing here...
-    // Then change the route
-    // history("/help");
-    console.log(formValues);
-    setFormValues(defaultFormValues);
+
+    fetch("http://localhost:5000/predict", {
+      method: "POST",
+      mode: "cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formValues),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.prediction);
+        // setPrediction(data.prediction);
+        setFormValues(defaultFormValues);
+      });
   };
+
   return (
     <>
       <form className="form-container" onSubmit={handleSubmit}>

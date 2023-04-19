@@ -9,12 +9,22 @@ import SignUp from "./components/auth/Sign-Up-Form/SignUp";
 import Shop from "./components/shop/Shop-main";
 import Checkout from "./components/checkout/Checkout";
 
+import { useState } from "react";
+
 function App() {
+  const [prediction, setPrediction] = useState(null);
+
+  const handlePrediction = (data) => {
+    setPrediction(data.prediction);
+  };
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path="crop-recommendation" element={<Crop />} />
+        <Route
+          path="crop-recommendation"
+          element={<Crop handlePrediction={handlePrediction} />}
+        />
         <Route path="shop" element={<Shop />} />
         {/* <Route path="auth" element={<Authentication />}>
           <Route path="sign-in" element={<SignIn />} />
@@ -23,6 +33,10 @@ function App() {
         <Route path="sign-in" element={<SignIn />} />
         <Route path="sign-up" element={<SignUp />} />
         <Route path="checkout" element={<Checkout />} />
+        {/* <Route
+          path="/form"
+          element={<Form handlePrediction={handlePrediction} />}
+        /> */}
       </Route>
     </Routes>
   );

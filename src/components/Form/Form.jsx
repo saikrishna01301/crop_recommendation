@@ -1,7 +1,8 @@
 import "./Form.scss";
 import Footer from "../../components/footer/Footer";
-// import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { predictionResultContext } from "../../context/prediction-result.context";
 
 const defaultFormValues = {
   nitrogen: "",
@@ -12,10 +13,10 @@ const defaultFormValues = {
   ph: "",
   rainfall: "",
 };
-const Form = ({ha}) => {
-  // const history = useNavigate();
+const Form = () => {
+  const navigate = useNavigate();
   const [formValues, setFormValues] = useState(defaultFormValues);
-
+  const { setResult } = useContext(predictionResultContext);
   const {
     nitrogen,
     phosphorus,
@@ -53,15 +54,19 @@ const Form = ({ha}) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.prediction);
-        // setPrediction(data.prediction);
         setFormValues(defaultFormValues);
+        setResult(data.prediction);
+        navigate("/PredictionResult ");
       });
+
+    // setFormValues(defaultFormValues);
+    // setResult("wheat");
+    // navigate("/PredictionResult ");
   };
 
   return (
     <>
-      <form className="form-container" onSubmit={handleSubmit}>
+      <form className="crop-form-container" onSubmit={handleSubmit}>
         <div className="heading">
           <h2>enter the parameters</h2>
         </div>

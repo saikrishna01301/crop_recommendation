@@ -63,6 +63,9 @@ const Form = () => {
     // setResult("wheat");
     // navigate("/PredictionResult ");
   };
+  // setFormValues(defaultFormValues);
+    // setResult("wheat");
+    // navigate("/PredictionResult ");
 
   return (
     <>

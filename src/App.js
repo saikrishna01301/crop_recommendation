@@ -3,7 +3,7 @@ import Home from "./Routes/Home/Home";
 import Crop from "./Routes/Crop/Crop";
 // import Authentication from "./Routes/Auth/Authentication";
 import { Routes, Route } from "react-router-dom";
-
+import Form from "./components/Form/Form";
 import SignIn from "./components/auth/Sign-In-Form/SignIn";
 import SignUp from "./components/auth/Sign-Up-Form/SignUp";
 import Shop from "./components/shop/Shop-main";
@@ -22,10 +22,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route
-          path="crop-recommendation"
-          element={<Crop handlePrediction={handlePrediction} />}
-        />
+        <Route path="/crop-recommendation" element={<Crop />} />
         <Route path="shop" element={<Shop />} />
         {/* <Route path="auth" element={<Authentication />}>
           <Route path="sign-in" element={<SignIn />} />
@@ -35,10 +32,10 @@ function App() {
         <Route path="sign-up" element={<SignUp />} />
         <Route path="checkout" element={<Checkout />} />
         <Route path="PredictionResult" element={<PredictionResult />} />
-        {/* <Route
+        <Route
           path="/form"
           element={<Form handlePrediction={handlePrediction} />}
-        /> */}
+        />
       </Route>
     </Routes>
   );

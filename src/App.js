@@ -9,6 +9,7 @@ import SignUp from "./components/auth/Sign-Up-Form/SignUp";
 import Shop from "./components/shop/Shop-main";
 import Checkout from "./components/checkout/Checkout";
 import PredictionResult from "./components/Prediction-Result/PredictionResult";
+import Delivery from "./components/Delivery/Delivery";
 
 import { useState } from "react";
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="sign-up" element={<SignUp />} />
         <Route path="checkout" element={<Checkout />} />
         <Route path="PredictionResult" element={<PredictionResult />} />
+        <Route path="delivery" element={<Delivery />} />
         {/* <Route
           path="/form"
           element={<Form handlePrediction={handlePrediction} />}

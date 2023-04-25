@@ -39,11 +39,11 @@ const Navigation = () => {
               Shop
             </NavLink>
           </li>
-          <li className="nav__right--item">
+          {/* <li className="nav__right--item">
             <NavLink className="nav__link" to="help">
               Help
             </NavLink>
-          </li>
+          </li> */}
           <li className="nav__right--item">
             {currentUser ? (
               <span className="nav__link" onClick={onSignOutHandler}>

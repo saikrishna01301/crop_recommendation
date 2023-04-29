@@ -1,13 +1,18 @@
 import "./Product-Card.scss";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/cart.context";
 import ShopButton from "../shop-button/Shop-Button";
+
+//toast
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductCard = ({ product }) => {
   const { name, price, imageUrl } = product;
   const { addItemToCart } = useContext(CartContext);
 
-  const addProductToCart = () => {
+  const notify = () => {
+    toast("Item is added");
     addItemToCart(product);
   };
   return (
@@ -24,7 +29,7 @@ const ProductCard = ({ product }) => {
 
       <ShopButton
         className="button-shop"
-        clickEvent={addProductToCart}
+        clickEvent={notify}
         text="add to cart"
       />
     </div>

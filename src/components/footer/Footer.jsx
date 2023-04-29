@@ -19,8 +19,14 @@ const Footer = () => {
             <Twitter className="footer--icon" />
           </div>
           <p className="footer--left-para">
-            Copyright © 2023 by Sai Krishna, Inc. All rights reserved.
+            Copyright © 2023 by Lovely Professional University, Inc. All rights
+            reserved.
           </p>
+        </div>
+        <div className="div-right">
+          You'll receive detailed recommendations for optimizing your farming
+          operations, including recommended crop varieties, planting schedules,
+          nutrient management, pest control, and more.
         </div>
       </div>
     </div>

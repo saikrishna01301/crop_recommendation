@@ -9,34 +9,38 @@
 }
 .heading {
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
   background-image: linear-gradient(to right, #7ed56f, #28b485);
   -webkit-background-clip: text;
   color: transparent;
   margin-bottom: 2rem;
 }
-label {
+.form__label {
   font-size: 2rem;
   margin-bottom: 0.6rem;
 }
-input[type="number"],
-:focus {
+.form__input {
   margin-bottom: 2rem;
   font-size: 1.6rem;
   padding: 1rem 1.6rem;
+}
+.form__input:focus {
   outline: none;
 }
-.submit-form {
+.btn-form {
   font-size: 2rem;
-  width: 30%;
+  width: 60%;
+  text-align: center;
   margin: 0 auto;
   text-transform: uppercase;
   color: #fff;
   background-color: #55c57a;
-  border: none;
+  border-radius: 0.2rem;
   padding: 1.5rem 2rem;
-  border-radius: 10rem;
-
   cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.btn-form:active {
+  transform: translateY(2px);
 }

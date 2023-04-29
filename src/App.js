@@ -33,12 +33,9 @@ function App() {
         <Route path="sign-up" element={<SignUp />} />
         <Route path="checkout" element={<Checkout />} />
         <Route path="PredictionResult" element={<PredictionResult />} />
-<<<<<<< HEAD
         <Route path="delivery" element={<Delivery />} />
-        {/* <Route
-=======
+
         <Route
->>>>>>> child
           path="/form"
           element={<Form handlePrediction={handlePrediction} />}
         />

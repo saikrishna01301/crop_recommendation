@@ -27,7 +27,7 @@ const SignUp = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     if (password !== conformPassword) {
-      console.log("passwords not matched");
+      alert("passwords not matched");
       return;
     }
     try {
@@ -40,7 +40,7 @@ const SignUp = () => {
       if (error.code === "auth/email-already-in-use") {
         alert("user already exists");
       } else {
-        console.log(error);
+        alert(error);
       }
     }
     setFormFields(defaultSignUpFormFields);

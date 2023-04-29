@@ -1,12 +1,15 @@
 import "./SignIn.scss";
 import {
   signInWithGooglePopup,
-  createUserDocumentFromAuth,
   authSignInWithEmailAndPassword,
 } from "../../../utils/firebase";
 import { useState } from "react";
 import FormInput from "../../FormInput/FormInput";
 import { useNavigate } from "react-router-dom";
+
+//toast
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import { useContext } from "react";
 // import { userContext } from "../../../context/user.context";
@@ -27,6 +30,8 @@ const SignIn = () => {
   //----------google sign in--------------------------
   const onGoogleHandler = async () => {
     await signInWithGooglePopup();
+    toast("Welcome to crop recommendation");
+    // navigate("/crop-recommendation");
 
     // setCurrentUser(user);
   };
@@ -44,9 +49,12 @@ const SignIn = () => {
     e.preventDefault();
     try {
       const { user } = await authSignInWithEmailAndPassword(email, password);
+      toast("Welcome to crop recommendation");
+      // navigate("/crop-recommendation");
+
       // setCurrentUser(user);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
     setFormFields(defaultSignInFormFields);
   };
@@ -83,6 +91,7 @@ const SignIn = () => {
           <button type="button" className="btn-s" onClick={onGoogleHandler}>
             google sign in
           </button>
+          <ToastContainer />
         </div>
       </form>
     </div>

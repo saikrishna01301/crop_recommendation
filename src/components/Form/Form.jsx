@@ -64,65 +64,87 @@ const Form = () => {
     // navigate("/PredictionResult ");
   };
   // setFormValues(defaultFormValues);
-    // setResult("wheat");
-    // navigate("/PredictionResult ");
+  // setResult("wheat");
+  // navigate("/PredictionResult ");
 
   return (
     <>
       <form className="crop-form-container" onSubmit={handleSubmit}>
         <div className="heading">
-          <h2>enter the parameters</h2>
+          <h3>enter the parameters</h3>
         </div>
-        <label htmlFor="nitrogen">Nitrogen:</label>
+        <label className="form__label" htmlFor="nitrogen">
+          Nitrogen:
+        </label>
         <input
+          className="form__input"
           type="number"
           name="nitrogen"
           value={nitrogen}
           onChange={onChangeHandler}
           required
         />
-        <label htmlFor="phosphorus"> Phosphorus:</label>
+        <label className="form__label" htmlFor="phosphorus">
+          {" "}
+          Phosphorus:
+        </label>
         <input
+          className="form__input"
           type="number"
           name="phosphorus"
           value={phosphorus}
           onChange={onChangeHandler}
           required
         />
-        <label htmlFor="potassium">Potassium:</label>
+        <label className="form__label" htmlFor="potassium">
+          Potassium:
+        </label>
         <input
+          className="form__input"
           type="number"
           name="potassium"
           value={potassium}
           onChange={onChangeHandler}
           required
         />
-        <label htmlFor="humidity">Humidity:</label>
+        <label className="form__label" htmlFor="humidity">
+          Humidity:
+        </label>
         <input
+          className="form__input"
           type="number"
           name="humidity"
           value={humidity}
           onChange={onChangeHandler}
           required
         />
-        <label htmlFor="temperature">Temperature:</label>
+        <label className="form__label" htmlFor="temperature">
+          Temperature:
+        </label>
         <input
+          className="form__input"
           type="number"
           name="temperature"
           value={temperature}
           onChange={onChangeHandler}
           required
         />
-        <label htmlFor="ph">PH:</label>
+        <label className="form__label" htmlFor="ph">
+          PH:
+        </label>
         <input
+          className="form__input"
           type="number"
           name="ph"
           value={ph}
           onChange={onChangeHandler}
           required
         />
-        <label htmlFor="rainfall">Rainfall:</label>
+        <label className="form__label" htmlFor="rainfall">
+          Rainfall:
+        </label>
         <input
+          className="form__input"
           type="number"
           name="rainfall"
           value={rainfall}
@@ -130,9 +152,9 @@ const Form = () => {
           required
         />
 
-        <button type="submit" className="submit-form">
+        <span type="submit" className="btn-form">
           Submit
-        </button>
+        </span>
       </form>
       <Footer />
     </>

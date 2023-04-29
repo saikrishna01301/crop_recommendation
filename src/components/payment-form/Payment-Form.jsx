@@ -2,18 +2,20 @@ import { useContext } from "react";
 import { CartContext } from "../../context/cart.context";
 import { userContext } from "../../context/user.context";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { useNavigate } from "react-router-dom";
 
 import "./Payment-Form.scss";
 
-const PaymentForm = () => {
+const PaymentForm = ({ setOverlayHidden }) => {
   const stripe = useStripe();
   const elements = useElements();
-  const { totalCartCost } = useContext(CartContext);
+  const { totalCartCost, clearAllCartItems, setIsCartOpen } =
+    useContext(CartContext);
   const { currentUser } = useContext(userContext);
   const amount = totalCartCost;
+  const navigate = useNavigate();
   // const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
-  
   const paymentHandler = async (e) => {
     e.preventDefault();
 
@@ -31,8 +33,6 @@ const PaymentForm = () => {
       return res.json();
     });
 
-    console.log(response);
-
     const clientSecret = response.paymentIntent.client_secret;
 
     const paymentResult = await stripe.confirmCardPayment(clientSecret, {
@@ -49,9 +49,14 @@ const PaymentForm = () => {
     } else {
       if (paymentResult.paymentIntent.status === "succeeded") {
         alert("Payment Successful!");
+        setOverlayHidden(false);
+        clearAllCartItems();
+        setIsCartOpen(false);
+        navigate("/");
       }
     }
   };
+
   return (
     <div className="payment-form--container">
       <form className="form-container " onSubmit={paymentHandler}>

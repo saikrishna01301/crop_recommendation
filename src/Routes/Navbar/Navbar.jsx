@@ -4,12 +4,18 @@ import { useContext } from "react";
 import { userContext } from "../../context/user.context";
 import { userSignOut } from "../../utils/firebase";
 
+//toast
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Navigation = () => {
   const { currentUser } = useContext(userContext);
+
   // console.log(currentUser);
 
   const onSignOutHandler = async () => {
     await userSignOut();
+    toast("you're signed out");
   };
   return (
     <>

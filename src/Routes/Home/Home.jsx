@@ -21,9 +21,9 @@ const Home = () => {
               based on your specific conditions.
             </span>
           </h1>
-          <button className="btn" onClick={getStartedHandler}>
+          <span className="btn-home" onClick={getStartedHandler}>
             Get Started
-          </button>
+          </span>
         </div>
       </div>
       <Main />

@@ -22,8 +22,8 @@ const defaultSignInFormFields = {
 ///////////////////component///////////////////////////////
 const SignIn = () => {
   // const { setCurrentUser } = useContext(userContext);
-
   const navigate = useNavigate();
+
   const createAccountHandler = () => {
     navigate("/sign-up");
   };
@@ -31,7 +31,7 @@ const SignIn = () => {
   const onGoogleHandler = async () => {
     await signInWithGooglePopup();
     toast("Welcome to crop recommendation");
-    // navigate("/crop-recommendation");
+    navigate("/");
 
     // setCurrentUser(user);
   };
@@ -50,8 +50,7 @@ const SignIn = () => {
     try {
       const { user } = await authSignInWithEmailAndPassword(email, password);
       toast("Welcome to crop recommendation");
-      // navigate("/crop-recommendation");
-
+      navigate("/");
       // setCurrentUser(user);
     } catch (error) {
       alert(error);

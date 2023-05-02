@@ -152,7 +152,7 @@ const Form = () => {
           required
         />
 
-        <span type="submit" className="btn-form">
+        <span type="submit" className="btn-form" onClick={handleSubmit}>
           Submit
         </span>
       </form>

@@ -48,7 +48,7 @@ const PaymentForm = ({ setOverlayHidden }) => {
       alert(paymentResult.error.message);
     } else {
       if (paymentResult.paymentIntent.status === "succeeded") {
-        alert("Payment Successful!");
+        alert("Payment Successful! & Your order is placed");
         setOverlayHidden(false);
         clearAllCartItems();
         setIsCartOpen(false);

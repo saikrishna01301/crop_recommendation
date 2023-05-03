@@ -3,6 +3,7 @@ import Footer from "../../components/footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { predictionResultContext } from "../../context/prediction-result.context";
+import { userContext } from "../../context/user.context";
 
 const defaultFormValues = {
   nitrogen: "",
@@ -17,6 +18,7 @@ const Form = () => {
   const navigate = useNavigate();
   const [formValues, setFormValues] = useState(defaultFormValues);
   const { setResult } = useContext(predictionResultContext);
+  const { currentUser } = useContext(userContext);
   const {
     nitrogen,
     phosphorus,
@@ -46,18 +48,23 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:5000/predict", {
-      method: "POST",
-      mode: "cors",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formValues),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setFormValues(defaultFormValues);
-        setResult(data.prediction);
-        navigate("/PredictionResult ");
-      });
+    if (currentUser) {
+      fetch("http://localhost:5000/predict", {
+        method: "POST",
+        mode: "cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formValues),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setFormValues(defaultFormValues);
+          setResult(data.prediction);
+          navigate("/PredictionResult ");
+        });
+    } else {
+      alert("Please Sign-In To Submit");
+      setFormValues(defaultFormValues);
+    }
 
     // setFormValues(defaultFormValues);
     // setResult("wheat");

@@ -3,14 +3,17 @@ import { CartContext } from "../../context/cart.context";
 import { useContext } from "react";
 import CheckoutItems from "../Checkout-items/Checkout-Items";
 import { useNavigate } from "react-router-dom";
+import { userContext } from "../../context/user.context";
 
 const Checkout = () => {
   const { cartItems, totalCartCost } = useContext(CartContext);
+  const { currentUser } = useContext(userContext);
   const navigate = useNavigate();
 
   const onClickHandler = () => {
-    navigate("/delivery");
+    currentUser ? navigate("/delivery") : alert("Please Sign-In");
   };
+
   return (
     <>
       <div className="checkout-item-container">
